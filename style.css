@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif; /**/
+}
+/*universal selector with a attribute selctor that looks for attrebutes that have a "h" within them*/
+*[class^="h"] {
+  font-family: "Times New Roman", Times, serif;
+}
+/* --------------------------------------------------------------------------------------------------- */
+/* Specific Stylings */
+.header {
+  padding: 48px 18px;
+  text-align: center;
+  background-color: rgb(165, 162, 162);
+}
+
+.main {
+  padding: 18px;
+  margin: 0px auto;
+}
