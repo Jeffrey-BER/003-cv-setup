@@ -2,11 +2,15 @@
   box-sizing: border-box;
 }
 
+html {
+  font-family: "Arial, Helvetica, sans-serif";
+}
+
 body {
   margin: 0px;
-  font-family: Arial, Helvetica, sans-serif; /**/
 }
-/*universal selector with a attribute selctor that looks for attrebutes that have a "h" within them*/
+
+/*universal selector with a attribute selctor that looks for attrebutes that have a "h" within them
 *[class^="h"] {
   font-family: "Times New Roman", Times, serif;
 }
@@ -21,4 +25,56 @@ body {
 .main {
   padding: 18px;
   margin: 0px auto;
+}
+/* Adds spacing between all"*" direct children ">" of main */
+main > * {
+  margin-top: 16px;
+}
+
+.profession::after {
+  content: "🚴";
+}
+
+/* Draw a line between all direct articles children of main except the first one */
+main article:not(:first-child) {
+  border-top: 1px solid #000;
+}
+
+/* Adding spacing between all anchor nav elements except the last one  */
+nav a:not(:last-child) {
+  margin-right: 24px;
+}
+/* Adds general color to all anchor elements */
+a {
+  color: rgb(0, 17, 255);
+}
+/* "pseudo-class" selector */
+a:link {
+  background-color: rgb(208, 208, 208);
+}
+/* "pseudo-class" selector */
+a:visited {
+  background-color: rgb(0, 255, 0);
+}
+
+a:hover {
+  background-color: rgb(97, 247, 102);
+}
+
+.experiences-sub-heading {
+  display: inline-block; /*Inline block becaus when window gets smaller then both headings time will not go in next row*/
+}
+
+.experiences-time-span {
+  display: inline-block;
+}
+
+/* "adjacent sibling combinator" Targets acrticle that come after another */
+article + article {
+  margin-top: 16px;
+}
+/* "pseudo-element selector" If a text get selected the selected test will be highlited in: */
+::selection {
+  background-color: rgba(0, 0, 0, 1);
+  color: rgba(255, 255, 255, 1);
 }
