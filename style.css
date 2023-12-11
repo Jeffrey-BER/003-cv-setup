@@ -20,15 +20,23 @@ body {
   padding: 48px 18px;
   text-align: center;
   background-color: rgb(165, 162, 162);
+  position: relative;
+  left: -20;
 }
 
 .main {
-  padding: 18px;
+  padding: 30px;
   margin: 0px auto;
+}
+
+.article-headings {
+  position: relative;
+  left: -20px;
 }
 /* Adds spacing between all"*" direct children ">" of main */
 main > * {
   margin-top: 16px;
+  margin-left: 20px;
 }
 
 .profession::after {
@@ -62,7 +70,7 @@ a:hover {
 }
 
 .experiences-sub-heading {
-  display: inline-block; /*Inline block becaus when window gets smaller then both headings time will not go in next row*/
+  display: inline-block;
 }
 
 .experiences-time-span {
