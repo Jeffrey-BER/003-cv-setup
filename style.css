@@ -24,14 +24,25 @@ body {
   left: -20;
 }
 
+.hire-me {
+  display: inline-block; /* shrinks its size down to its content instead of the whole line*/
+  position: absolute; /*the space it reserves should be not taken up in the flow*/
+  top: 20px; /* sets the content to the top with a shift down of 20px down*/
+  right: 20px; /*sets the content to the right with 20px to left */
+  padding: 9px; /*puts space between text and the block */
+  border-radius: 5px; /* rounds the edges of the element aside*/
+  color: rgba(0, 0, 0, 1);
+  background-color: salmon;
+}
+
 .main {
   padding: 30px;
   margin: 0px auto;
 }
 
 .article-headings {
-  position: relative;
-  left: -20px;
+  position: relative; /*sets the position property to relativ*/
+  left: -20px; /*creats an offset of -20. so to the LEFT from its initial position aut of the flow*/
 }
 /* Adds spacing between all"*" direct children ">" of main */
 main > * {
