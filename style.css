@@ -1,13 +1,15 @@
 * {
-  box-sizing: border-box;
+  /* *is a wildcard character in css matches/selects all elements*/
+  box-sizing: border-box; /*sets the box sizing property to border-box -> element's total width and height include padding and border, but not the margin. -> it allows you to set explicit widths and heights for elements*/
 }
 
 html {
-  font-family: "Arial, Helvetica, sans-serif";
+  font-family: "Arial, Helvetica, sans-serif"; /*setting the root font-family to Arial, if not avail. to Helvetica, if not avail. take the first sans serif */
+  font-size: 16px; /*setting a root font size to 16px*/
 }
 
 body {
-  margin: 0px;
+  margin: 0rem;
 }
 
 /*universal selector with a attribute selctor that looks for attrebutes that have a "h" within them
@@ -16,38 +18,56 @@ body {
 }
 /* --------------------------------------------------------------------------------------------------- */
 /* Specific Stylings */
+
 .header {
-  padding: 48px 18px;
+  padding: 3rem 1rem;
   text-align: center;
   background-color: rgb(165, 162, 162);
   position: relative;
-  left: -20;
+  /*left: 1rem;*/
+}
+
+.header-group {
+  font-size: 4em;
+  max-width: 40rem;
+  max-height: 40rem;
+  _border: 0.1rem solid black;
+  margin: 0 auto;
+}
+
+.title-title {
+  font-size: 1em; /*f-s will be set to 4em (4em are 4*16px)*/
+}
+
+.title-profession {
+  font-size: 25%; /*makes the font size to 25% of its parent element (Parent element is at this point of dev. the div. )*/
 }
 
 .hire-me {
   display: inline-block; /* shrinks its size down to its content instead of the whole line*/
   position: absolute; /*the space it reserves should be not taken up in the flow*/
-  top: 20px; /* sets the content to the top with a shift down of 20px down*/
-  right: 20px; /*sets the content to the right with 20px to left */
-  padding: 9px; /*puts space between text and the block */
-  border-radius: 5px; /* rounds the edges of the element aside*/
+  top: 1rem; /* sets the content to the top with a shift down of 1rem down*/
+  right: 2rem; /*sets the content to the right with 1rem to left */
+  padding: 0.5rem; /*puts space between text and the block */
+  border-radius: 0.3rem; /* rounds the edges of the element aside*/
   color: rgba(0, 0, 0, 1);
   background-color: salmon;
 }
 
 .main {
-  padding: 30px;
-  margin: 0px auto;
+  padding: 2rem; /*adds padding to all 4 sides to the element of class main */
+  margin: 0rem auto; /*0px sets margin to 0px to top and bottom, auto centers the element left and right*/
+  max-width: 90ch; /*limits the max. characters per line*/
 }
 
 .article-headings {
   position: relative; /*sets the position property to relativ*/
-  left: -20px; /*creats an offset of -20. so to the LEFT from its initial position aut of the flow*/
+  left: -1.5rem; /*creats an offset of -20. so to the LEFT from its initial position aut of the flow*/
 }
 /* Adds spacing between all"*" direct children ">" of main */
 main > * {
-  margin-top: 16px;
-  margin-left: 20px;
+  margin-top: 1rem;
+  margin-left: 1.5rem;
 }
 
 .profession::after {
@@ -56,12 +76,12 @@ main > * {
 
 /* Draw a line between all direct articles children of main except the first one */
 main article:not(:first-child) {
-  border-top: 1px solid #000;
+  border-top: 0.07rem solid #000;
 }
 
 /* Adding spacing between all anchor nav elements except the last one  */
 nav a:not(:last-child) {
-  margin-right: 24px;
+  margin-right: 1.5rem;
 }
 /* Adds general color to all anchor elements */
 a {
@@ -70,6 +90,8 @@ a {
 /* "pseudo-class" selector */
 a:link {
   background-color: rgb(208, 208, 208);
+  padding: 0.3rem;
+  border-radius: 0.3rem;
 }
 /* "pseudo-class" selector */
 a:visited {
@@ -90,7 +112,7 @@ a:hover {
 
 /* "adjacent sibling combinator" Targets acrticle that come after another */
 article + article {
-  margin-top: 16px;
+  margin-top: 1rem;
 }
 /* "pseudo-element selector" If a text get selected the selected test will be highlited in: */
 ::selection {
