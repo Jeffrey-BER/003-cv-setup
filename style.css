@@ -16,6 +16,48 @@ body {
 *[class^="h"] {
   font-family: "Times New Roman", Times, serif;
 }
+/*---------------------------------------------------------------------------------------------------*/
+/* Common styles for .hire-me */
+.hire-me {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  display: inline-block;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  color: rgba(0, 0, 0, 1);
+  background-color: salmon;
+}
+
+/* General styling: "adjacent sibling combinator" Targets acrticle that come after another */
+.main > article + article {
+  margin-top: 1rem;
+}
+/*Breakpoints with the approach: Mobile first*/
+/*for medium devices (Bootstrap)*/
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+/*for Large devices (Bootstrap)*/
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+  html {
+    font-size: 20px;
+  }
+  .hire-me {
+    position: fixed;
+  }
+}
+
+/*Increase the spacing between the main articles beginning with the medium break point*/
+@media screen and (min-width: 576px) {
+  .main article + article {
+    margin-top: 2em;
+  }
+}
+
 /* --------------------------------------------------------------------------------------------------- */
 /* Specific Stylings */
 
@@ -41,17 +83,6 @@ body {
 
 .title-profession {
   font-size: 25%; /*makes the font size to 25% of its parent element (Parent element is at this point of dev. the div. )*/
-}
-
-.hire-me {
-  display: inline-block; /* shrinks its size down to its content instead of the whole line*/
-  position: absolute; /*the space it reserves should be not taken up in the flow*/
-  top: 1rem; /* sets the content to the top with a shift down of 1rem down*/
-  right: 2rem; /*sets the content to the right with 1rem to left */
-  padding: 0.5rem; /*puts space between text and the block */
-  border-radius: 0.3rem; /* rounds the edges of the element aside*/
-  color: rgba(0, 0, 0, 1);
-  background-color: salmon;
 }
 
 .main {
@@ -110,12 +141,18 @@ a:hover {
   display: inline-block;
 }
 
-/* "adjacent sibling combinator" Targets acrticle that come after another */
-article + article {
-  margin-top: 1rem;
-}
 /* "pseudo-element selector" If a text get selected the selected test will be highlited in: */
 ::selection {
   background-color: rgba(0, 0, 0, 1);
   color: rgba(255, 255, 255, 1);
+}
+
+/*Hiding the navigation and "hire me badge when in printer is rendering:"*/
+@media print {
+  .navigation-header {
+    display: none;
+  }
+  .hire-me {
+    display: none;
+  }
 }
