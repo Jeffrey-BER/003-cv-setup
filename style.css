@@ -41,7 +41,7 @@ body {
   flex-direction: column;
 }
 
-.navigation-header > a + a {
+.navigation-header > a {
   margin-top: 0.3rem;
 }
 
@@ -61,12 +61,7 @@ body {
     flex-direction: row;
     justify-content: center;
   }
-  .header-first-job {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-
+  .header-first-job,
   .header-secound-job {
     flex-direction: row;
     align-items: center;
