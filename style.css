@@ -1,3 +1,5 @@
+/*Default Settings:*/
+/*---------------------------------------------------------------------------------------------------*/
 * {
   /* *is a wildcard character in css matches/selects all elements*/
   box-sizing: border-box; /*sets the box sizing property to border-box -> element's total width and height include padding and border, but not the margin. -> it allows you to set explicit widths and heights for elements*/
@@ -12,12 +14,6 @@ body {
   margin: 0rem;
 }
 
-/*universal selector with a attribute selctor that looks for attrebutes that have a "h" within them
-*[class^="h"] {
-  font-family: "Times New Roman", Times, serif;
-}
-/*---------------------------------------------------------------------------------------------------*/
-/* Common styles for .hire-me */
 .hire-me {
   position: absolute;
   top: 1rem;
@@ -29,32 +25,81 @@ body {
   background-color: salmon;
 }
 
+.header-first-job {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+.header-secound-job {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.navigation-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation-header > a + a {
+  margin-top: 0.3rem;
+}
+
 /* General styling: "adjacent sibling combinator" Targets acrticle that come after another */
 .main > article + article {
   margin-top: 1rem;
 }
+
 /*Breakpoints with the approach: Mobile first*/
+/*---------------------------------------------------------------------------------------------------*/
 /*for medium devices (Bootstrap)*/
 @media screen and (min-width: 576px) and (max-width: 768px) {
   html {
     font-size: 18px;
   }
+  .navigation-header {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .header-first-job {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-secound-job {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .main article + article {
+    margin-top: 2em;
+  }
 }
 
 /*for Large devices (Bootstrap)*/
-@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+@media screen and (min-width: 769px) {
   html {
     font-size: 20px;
   }
   .hire-me {
     position: fixed;
   }
-}
+  .navigation-header {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .header-first-job {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-/*Increase the spacing between the main articles beginning with the medium break point*/
-@media screen and (min-width: 576px) {
-  .main article + article {
-    margin-top: 2em;
+  .header-secound-job {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 
@@ -119,7 +164,7 @@ a {
   color: rgb(0, 17, 255);
 }
 /* "pseudo-class" selector */
-a:link {
+.header a:link {
   background-color: rgb(208, 208, 208);
   padding: 0.3rem;
   border-radius: 0.3rem;
