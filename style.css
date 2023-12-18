@@ -14,6 +14,18 @@ body {
   margin: 0rem;
 }
 
+.footer-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  _width: auto;
+  height: 200px;
+  color: salmon;
+  background-color: #6d6d6d;
+  border: 5px solid salmon;
+  background-image: linear-gradient(rgba(165, 162, 162, 1), rgb(103, 102, 102));
+}
+
 .hire-me {
   position: absolute;
   top: 1rem;
@@ -60,7 +72,9 @@ body {
   .navigation-header {
     flex-direction: row;
     justify-content: center;
+    gap: 1.5rem;
   }
+
   .header-first-job,
   .header-secound-job {
     flex-direction: row;
@@ -84,6 +98,7 @@ body {
   .navigation-header {
     flex-direction: row;
     justify-content: center;
+    gap: 1.5rem;
   }
   .header-first-job {
     flex-direction: row;
@@ -104,7 +119,7 @@ body {
 .header {
   padding: 3rem 1rem;
   text-align: center;
-  background-color: rgb(165, 162, 162);
+  background-image: linear-gradient(rgb(103, 102, 102), rgba(165, 162, 162, 1));
   position: relative;
   /*left: 1rem;*/
 }
@@ -147,13 +162,9 @@ main > * {
 
 /* Draw a line between all direct articles children of main except the first one */
 main article:not(:first-child) {
-  border-top: 0.07rem solid #000;
+  border-top: 0.07rem solid rgba(165, 162, 162, 1);
 }
 
-/* Adding spacing between all anchor nav elements except the last one  */
-nav a:not(:last-child) {
-  margin-right: 1.5rem;
-}
 /* Adds general color to all anchor elements */
 a {
   color: rgb(0, 17, 255);
