@@ -1,29 +1,70 @@
-/*Default Settings:*/
-/*---------------------------------------------------------------------------------------------------*/
+/*Default Settings: ---------------------------------------------------------------------------------------------------*/
+:root {
+  /*custom propertys*/
+  --header-footer-color-1: rgb(114, 114, 114);
+  --header-footer-color-2: rgb(169, 169, 169);
+  --text-color: rgb(32, 32, 32);
+  --button-color: rgb(181, 11, 11);
+  --link-color: rgb(181, 11, 11);
+  --link-background-color: rgb(213, 213, 213);
+  /*font familys and sizes*/
+  font-family: "Arial, Helvetica, sans-serif"; /*setting the root font-family to Arial, if not avail. to Helvetica, if not avail. take the first sans serif */
+  font-size: 16px; /*setting a root font size to 16px*/
+}
+
 * {
   /* *is a wildcard character in css matches/selects all elements*/
   box-sizing: border-box; /*sets the box sizing property to border-box -> element's total width and height include padding and border, but not the margin. -> it allows you to set explicit widths and heights for elements*/
-}
-
-html {
-  font-family: "Arial, Helvetica, sans-serif"; /*setting the root font-family to Arial, if not avail. to Helvetica, if not avail. take the first sans serif */
-  font-size: 16px; /*setting a root font size to 16px*/
 }
 
 body {
   margin: 0rem;
 }
 
-.footer-text {
+/*Header default Setting --------------------------------------------------------------------------------------------------------------*/
+.header {
+  padding: 3rem 1rem;
+  text-align: center;
+  background-image: linear-gradient(
+    var(--header-footer-color-2),
+    var(--header-footer-color-1)
+  );
+  position: relative;
+}
+
+.header-group {
+  font-size: 4em;
+  max-width: 40rem;
+  max-height: 40rem;
+  margin: 0 auto;
+}
+
+.navigation-header > a {
+  margin-top: 0.3rem;
+  transition: background-color 0.3s;
+}
+
+.navigation-header {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  _width: auto;
-  height: 200px;
-  color: salmon;
-  background-color: #6d6d6d;
-  border: 5px solid salmon;
-  background-image: linear-gradient(rgba(165, 162, 162, 1), rgb(103, 102, 102));
+  flex-direction: column;
+}
+
+.header a:link {
+  background-color: var(--link-background-color);
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+}
+
+.navigation-header > a:hover {
+  background-color: var(--button-color);
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.navigation-header > a:focus {
+  background-color: var(--button-color);
+  color: white;
+  transition: background-color 0.3s;
 }
 
 .hire-me {
@@ -33,10 +74,28 @@ body {
   display: inline-block;
   padding: 0.5rem;
   border-radius: 0.3rem;
-  color: rgba(0, 0, 0, 1);
-  background-color: salmon;
+  color: white;
+  background-color: var(--button-color);
 }
 
+.title-profession::after {
+  content: "🚴";
+}
+
+/*Footer default Settings -------------------------------------------------------------------------------------------------------------*/
+.footer-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  color: var(--text-color);
+  background-image: linear-gradient(
+    var(--header-footer-color-2),
+    var(--header-footer-color-1)
+  );
+}
+
+/*Body default settings----------------------------------------------------------------------------------------------------------------*/
 .header-first-job {
   display: flex;
   flex-direction: column;
@@ -48,18 +107,58 @@ body {
   justify-content: left;
 }
 
-.navigation-header {
-  display: flex;
-  flex-direction: column;
-}
-
-.navigation-header > a {
-  margin-top: 0.3rem;
-}
-
 /* General styling: "adjacent sibling combinator" Targets acrticle that come after another */
 .main > article + article {
   margin-top: 1rem;
+}
+
+.main {
+  padding: 2rem; /*adds padding to all 4 sides to the element of class main */
+  margin: 0rem auto; /*0px sets margin to 0px to top and bottom, auto centers the element left and right*/
+  max-width: 90ch; /*limits the max. characters per line*/
+}
+
+main > * {
+  margin-top: 1rem;
+  margin-left: 1.5rem;
+}
+
+main article:not(:first-child) {
+  border-top: 0.07rem solid var(--header-footer-color-2);
+}
+
+.title-title {
+  font-size: 1em; /*f-s will be set to 4em (4em are 4*16px)*/
+}
+
+.title-profession {
+  font-size: 25%; /*makes the font size to 25% of its parent element (Parent element is at this point of dev. the div. )*/
+}
+
+.article-headings {
+  position: relative; /*sets the position property to relativ*/
+  left: -1.5rem; /*creats an offset of -20. so to the LEFT from its initial position aut of the flow*/
+}
+
+.experiences-sub-heading {
+  display: inline-block;
+}
+
+.experiences-time-span {
+  display: inline-block;
+}
+
+a {
+  color: var(--link-color);
+}
+
+a:hover {
+  background-color: rgb(168, 168, 168);
+}
+/* "pseudo-element selector" If a text get selected the selected test will be highlited in: */
+::selection {
+  background-color: rgba(0, 0, 0, 1);
+  color: rgba(255, 255, 255, 1);
 }
 
 /*Breakpoints with the approach: Mobile first*/
@@ -111,91 +210,6 @@ body {
     align-items: center;
     justify-content: space-between;
   }
-}
-
-/* --------------------------------------------------------------------------------------------------- */
-/* Specific Stylings */
-
-.header {
-  padding: 3rem 1rem;
-  text-align: center;
-  background-image: linear-gradient(rgb(103, 102, 102), rgba(165, 162, 162, 1));
-  position: relative;
-  /*left: 1rem;*/
-}
-
-.header-group {
-  font-size: 4em;
-  max-width: 40rem;
-  max-height: 40rem;
-  _border: 0.1rem solid black;
-  margin: 0 auto;
-}
-
-.title-title {
-  font-size: 1em; /*f-s will be set to 4em (4em are 4*16px)*/
-}
-
-.title-profession {
-  font-size: 25%; /*makes the font size to 25% of its parent element (Parent element is at this point of dev. the div. )*/
-}
-
-.main {
-  padding: 2rem; /*adds padding to all 4 sides to the element of class main */
-  margin: 0rem auto; /*0px sets margin to 0px to top and bottom, auto centers the element left and right*/
-  max-width: 90ch; /*limits the max. characters per line*/
-}
-
-.article-headings {
-  position: relative; /*sets the position property to relativ*/
-  left: -1.5rem; /*creats an offset of -20. so to the LEFT from its initial position aut of the flow*/
-}
-/* Adds spacing between all"*" direct children ">" of main */
-main > * {
-  margin-top: 1rem;
-  margin-left: 1.5rem;
-}
-
-.profession::after {
-  content: "🚴";
-}
-
-/* Draw a line between all direct articles children of main except the first one */
-main article:not(:first-child) {
-  border-top: 0.07rem solid rgba(165, 162, 162, 1);
-}
-
-/* Adds general color to all anchor elements */
-a {
-  color: rgb(0, 17, 255);
-}
-/* "pseudo-class" selector */
-.header a:link {
-  background-color: rgb(208, 208, 208);
-  padding: 0.3rem;
-  border-radius: 0.3rem;
-}
-/* "pseudo-class" selector */
-a:visited {
-  background-color: rgb(0, 255, 0);
-}
-
-a:hover {
-  background-color: rgb(97, 247, 102);
-}
-
-.experiences-sub-heading {
-  display: inline-block;
-}
-
-.experiences-time-span {
-  display: inline-block;
-}
-
-/* "pseudo-element selector" If a text get selected the selected test will be highlited in: */
-::selection {
-  background-color: rgba(0, 0, 0, 1);
-  color: rgba(255, 255, 255, 1);
 }
 
 /*Hiding the navigation and "hire me badge when in printer is rendering:"*/
