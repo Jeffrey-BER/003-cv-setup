@@ -33,20 +33,20 @@ body {
 }
 
 .header-group {
-  font-size: 4em;
+  font-size: 4em; /*Sets */
   max-width: 40rem;
   max-height: 40rem;
   margin: 0 auto;
 }
 
-.navigation-header > a {
-  margin-top: 0.3rem;
-  transition: background-color 0.3s;
-}
-
 .navigation-header {
   display: flex;
   flex-direction: column;
+}
+
+.navigation-header > a {
+  margin-top: 0.3rem;
+  transition: background-color 0.3s;
 }
 
 .header a:link {
@@ -76,6 +76,16 @@ body {
   border-radius: 0.3rem;
   color: white;
   background-color: var(--button-color);
+  transform-origin: 100% 0%;
+  transition: transform 0.5s;
+}
+
+.header:hover .hire-me {
+  transform: scale(1.5);
+}
+
+.header:focus-within .hire-me {
+  transform: scale(1.5);
 }
 
 .title-profession::after {
@@ -199,6 +209,7 @@ a:hover {
     justify-content: center;
     gap: 1.5rem;
   }
+  /*------------------------------------------------
   .header-first-job {
     flex-direction: row;
     align-items: center;
@@ -209,6 +220,13 @@ a:hover {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+  }------------------------------------------------*/
+  .main-article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5px;
+    border: 3px solid #000;
   }
 }
 
